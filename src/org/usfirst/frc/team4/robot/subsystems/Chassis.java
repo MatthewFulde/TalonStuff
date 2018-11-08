@@ -1,7 +1,7 @@
 package org.usfirst.frc.team4.robot.subsystems;
 
-import org.usfirst.frc.team4.robot.RobotMap;
 import org.usfirst.frc.team4.robot.commands.Drive;
+import org.usfirst.frc.team4.robot.constants.DriveConstants;
 
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
@@ -17,7 +17,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Chassis extends Subsystem {
 	
     WPI_VictorSPX leftFrontMotor;
-    WPI_TalonSRX leftMiddleMotor;
+    public WPI_TalonSRX leftMiddleMotor;
     WPI_VictorSPX leftBackMotor;
 	
     WPI_VictorSPX rightFrontMotor;
@@ -26,13 +26,13 @@ public class Chassis extends Subsystem {
     
     AHRS gyro;
     public Chassis() {
-		leftFrontMotor = new WPI_VictorSPX(RobotMap.CHASSIS_MOTOR_LEFT_FRONT);
-		leftMiddleMotor = new WPI_TalonSRX(RobotMap.CHASSIS_MOTOR_LEFT_MIDDLE);
-		leftBackMotor = new WPI_VictorSPX(RobotMap.CHASSIS_MOTOR_LEFT_REAR);
+		leftFrontMotor = new WPI_VictorSPX(DriveConstants.CHASSIS_MOTOR_LEFT_FRONT);
+		leftMiddleMotor = new WPI_TalonSRX(DriveConstants.CHASSIS_MOTOR_LEFT_MIDDLE);
+		leftBackMotor = new WPI_VictorSPX(DriveConstants.CHASSIS_MOTOR_LEFT_REAR);
 		
-		rightFrontMotor = new WPI_VictorSPX(RobotMap.CHASSIS_MOTOR_RIGHT_FRONT);
-		rightMiddleMotor = new WPI_TalonSRX(RobotMap.CHASSIS_MOTOR_RIGHT_MIDDLE);
-		rightBackMotor = new WPI_VictorSPX(RobotMap.CHASSIS_MOTOR_RIGHT_REAR);
+		rightFrontMotor = new WPI_VictorSPX(DriveConstants.CHASSIS_MOTOR_RIGHT_FRONT);
+		rightMiddleMotor = new WPI_TalonSRX(DriveConstants.CHASSIS_MOTOR_RIGHT_MIDDLE);
+		rightBackMotor = new WPI_VictorSPX(DriveConstants.CHASSIS_MOTOR_RIGHT_REAR);
 		
 		leftMiddleMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder);
 		rightMiddleMotor.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder);
